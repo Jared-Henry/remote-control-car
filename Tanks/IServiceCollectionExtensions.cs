@@ -29,7 +29,7 @@ namespace Tanks
         }
         public static IServiceCollection AddMotorHatRightTread(this IServiceCollection services, TankTreadSettings settings)
         {
-            return services.AddSingleton<ILeftTreadMotor>(provider =>
+            return services.AddSingleton<IRightTreadMotor>(provider =>
             {
                 var hat = provider.GetRequiredService<MotorHat>();
                 return new MotorHatTreadMotor(hat, settings);

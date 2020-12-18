@@ -27,9 +27,11 @@ namespace remote_control_car
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            var tankSettings = new TankSettings();
+            Configuration.Bind("Tank", tankSettings);
             services
                 .AddTank()
-                .AddMotorHatTank(Configuration.GetSection("Tank").Get<TankSettings>());
+                .AddMotorHatTank(tankSettings);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

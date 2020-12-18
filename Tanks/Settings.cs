@@ -2,9 +2,9 @@ namespace Tanks
 {
     public class TankSettings
     {
-        public TankTreadSettings LeftTread;
-        public TankTreadSettings RightTread;
-        public TankTurretSettings Turret;
+        public TankTreadSettings LeftTread { get; set; } = new TankTreadSettings();
+        public TankTreadSettings RightTread { get; set; } = new TankTreadSettings();
+        public TankTurretSettings Turret { get; set; } = new TankTurretSettings();
     }
 
     public class TankTreadSettings
@@ -14,8 +14,8 @@ namespace Tanks
 
     public class TankTurretSettings
     {
-        public TankTurretAxisSettings HorizontalAxis;
-        public TankTurretAxisSettings VerticalAxis;
+        public TankTurretAxisSettings HorizontalAxis { get; set; } = new TankTurretAxisSettings();
+        public TankTurretAxisSettings VerticalAxis { get; set; } = new TankTurretAxisSettings();
     }
 
     public class TankTurretAxisSettings
