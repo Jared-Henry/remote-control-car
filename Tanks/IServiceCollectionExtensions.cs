@@ -10,7 +10,7 @@ namespace Tanks
             return services.AddSingleton<Tank>();
         }
 
-        public static IServiceCollection AddMotorHat(this IServiceCollection services, TankSettings settings)
+        public static IServiceCollection AddMotorHatTank(this IServiceCollection services, TankSettings settings)
         {
             return services.AddSingleton<MotorHat>()
             .AddMotorHatLeftTread(settings.LeftTread)

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Tanks;
 
 namespace remote_control_car
 {
@@ -26,6 +27,9 @@ namespace remote_control_car
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            services
+                .AddTank()
+                .AddMotorHatTank(Configuration.GetSection("Tank").Get<TankSettings>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,7 +71,7 @@ namespace remote_control_car
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseAngularCliServer(npmScript: "start");
+                    spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
                 }
             });
         }

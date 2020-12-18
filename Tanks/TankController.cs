@@ -12,7 +12,7 @@ using Iot.Device.ServoMotor;
 using Microsoft.Extensions.DependencyInjection;
 using Tanks;
 
-namespace remote_control_car.Controllers
+namespace Tanks
 {
     [ApiController]
     [Route("[controller]")]
